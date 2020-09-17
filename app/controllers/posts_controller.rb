@@ -5,8 +5,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @myposts = current_user.posts
-    @count = @posts.count - @myposts.count
+    @myposts = current_user.try(:posts)
+    @count=@posts.count
+    if @myposts
+      @count -= @myposts.count
+    end
+    #@count = @posts.count - @myposts.count
     #@posts = current_user.posts
   end
 
