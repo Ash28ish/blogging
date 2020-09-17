@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  belongs_to: 
+  comment: MyString
+  user: one
+
+two:
+  belongs_to: 
+  comment: MyString
+  user: two
