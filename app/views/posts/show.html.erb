@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 
 
@@ -15,8 +14,8 @@
 
 <% @post.comments.each do |comment| %>
   <% @userr  = comment.user %>
-  <p> <%= comment.body %>
-  <p> <% @userr.try(:email) %> </p>
+  <p> <%= comment.body %></p>
+  <p> &nbsp -By <%= @userr.username %> </p>
   <br>
 <% end %>
 

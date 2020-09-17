@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @myposts = current_user.posts
+    @count = @posts.count - @myposts.count
     #@posts = current_user.posts
   end
 
@@ -12,7 +14,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @comment = @post.comments.build()
   end
 
   # GET /posts/new
